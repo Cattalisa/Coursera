@@ -46,7 +46,7 @@ async function displayCertificate() {
 
         // 3. Mengisi Gambar Sertifikat & Preview
         safeSet('cert-image', data.image, 'src');
-        safeSet('cert-preview', data.ppdf_url, 'href');
+        safeSet('cert-preview', data.pdf_url, 'src');
 
         // 4. Mengisi Tombol Download
         safeSet('btn-download', data.pdf_url, 'href');
@@ -62,4 +62,5 @@ async function displayCertificate() {
 }
 
 displayCertificate();
+
 
