@@ -3,7 +3,7 @@
     "id": "RZ83CX3H8V",
     "name": "Muhamad Dafansyah",
     "course": "Strategic Management",
-    "pdf_url": "assets/ethics.pdf",
+    "pdf_url": "assets/Strategic-Management.pdf",
     "institution": "Copenhagen Business School",
     "date": "2025-12-26",
     "hours": 11,
@@ -33,7 +33,7 @@
   {
     "id": "O5W91PPPOW",
     "name": "Muhamad Dafansyah",
-    "course": "Marketing Fundamentals",
+    "course": "Poverty & Population",
     "institution": "KampusMerit",
     "date": "2025-11-30",
     "hours": 10,
@@ -124,22 +124,6 @@
     "skills": ["Strategic Planning", "Business Transformation", "Business Strategy"],
     "rating": "4.7 (4.542 peringkat)",
     "enrolled": "141.937 sudah terdaftar"
-  },
-  {
-    "id": "Q5AJ4JOI1I",
-    "name": "Muhamad Dafansyah",
-    "course": "Strategic Management",
-    "pdf_url": "assets/ethics.pdf",
-    "institution": "Copenhagen Business School",
-    "date": "2025-12-26",
-    "hours": 11,
-    "verified": true,
-    "photo": "https://via.placeholder.com/150",
-    "institutionLogo": "https://via.placeholder.com/50",
-    "image": "assets/images/Procurment-sarah.jpg",
-    "skills": ["Strategic Planning", "Business Transformation", "Business Strategy"],
-    "rating": "4.7 (4.542 peringkat)",
-    "enrolled": "141.937 sudah terdaftar"
   }
-
 ]
+
