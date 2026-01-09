@@ -1,4 +1,3 @@
-// 1. Fungsi untuk mengambil data dari JSON
 async function fetchCertificates() {
     try {
         const r = await fetch('cert-data.json');
@@ -9,50 +8,52 @@ async function fetchCertificates() {
     }
 }
 
-// 2. Fungsi utama untuk menampilkan sertifikat berdasarkan ID di URL
+function updateEl(id, value, attr = 'text') {
+    const el = document.getElementById(id);
+    if (!el) return; // Lewati jika ID tidak ditemukan di HTML
+    
+    if (attr === 'src') el.src = value;
+    else if (attr === 'href') el.href = value;
+    else el.textContent = value;
+}
+
 async function displayCertificate() {
     const certificates = await fetchCertificates();
-
-    // Mengambil ID dari URL (Contoh: website.com/?id=ABCDE)
     const urlParams = new URLSearchParams(window.location.search);
-    const certId = urlParams.get('id') ? urlParams.get('id').toUpperCase() : null;
+    const certId = urlParams.get('id');
 
-    if (!certId) {
-        console.warn("ID tidak ditemukan di URL. Menampilkan data pertama sebagai default.");
-    }
-
-    // Mencari data yang ID-nya cocok dengan yang ada di URL
-    // Jika ID di URL kosong, ambil data pertama (indeks 0)
+    // Cari data berdasarkan ID, jika tidak ada ambil data pertama (indeks 0)
     const data = certId 
-        ? certificates.find(c => c.id === certId) 
+        ? certificates.find(c => c.id.toUpperCase() === certId.toUpperCase()) 
         : certificates[0];
 
     if (data) {
-        // Mengisi teks identitas
-        document.getElementById('user-name').textContent = data.name;
-        document.getElementById('user-name-small').textContent = data.name;
-        document.getElementById('cert-date').innerText = data.date;
-        document.getElementById('duration').innerText = data.hours + ' jam (kira-kira)';
-        document.getElementById('course-title').innerText = data.course;
+        // Isi Teks
+        updateEl('course-title', data.course);
+        updateEl('user-name', data.name);
+        updateEl('user-name-small', data.name);
+        updateEl('cert-date', data.date);
+        updateEl('duration', data.hours + ' jam (kira-kira)');
+        updateEl('uni-name', data.institution);
+        updateEl('rating', data.rating);
+        updateEl('enrolled', data.enrolled);
 
-        // Mengisi gambar (Foto profil & Sertifikat)
-        document.getElementById('user-photo').src = data.photo;
-        document.getElementById('cert-image').src = data.image;
+        // Isi Gambar
+        updateEl('user-photo', data.photo, 'src');
+        updateEl('cert-image', data.image, 'src');
+        updateEl('uni-logo', data.institutionLogo, 'src');
 
-        // Menangani tombol download
-        const downloadBtn = document.getElementById('btn-download');
-        if (data.pdf_url) {
-            downloadBtn.href = data.pdf_url;
-            downloadBtn.setAttribute('download', `Sertifikat-${data.name}.pdf`);
+        // Tombol Download
+        updateEl('btn-download', data.pdf_url, 'href');
+
+        // Render Skills (Daftar Keahlian)
+        const skillBox = document.getElementById('skills-container');
+        if (skillBox && data.skills) {
+            skillBox.innerHTML = data.skills.map(s => 
+                `<span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium border border-gray-200">${s}</span>`
+            ).join('');
         }
-    } else {
-        // Jika kode ID salah atau tidak ditemukan di JSON
-        document.body.innerHTML = `<div style="text-align:center; padding-top:50px;">
-            <h1>404 - Sertifikat Tidak Valid</h1>
-            <p>Maaf, kode kredensial <b>${certId}</b> tidak terdaftar di sistem kami.</p>
-        </div>`;
     }
 }
 
-// Jalankan fungsi saat halaman dimuat
 displayCertificate();
