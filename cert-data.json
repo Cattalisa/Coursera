@@ -8,7 +8,6 @@
     "date": "2025-12-26",
     "hours": 11,
     "verified": true,
-    "photo": "assets/images/user-photo.png",
     "institutionLogo": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-university-assets.s3.amazonaws.com/a1/26dc9b1295b7f1b521b1fa92d3873c/cbs-coursera-logo-square__1280x1280px.png?auto=format%2Ccompress&dpr=1&w=80&h=80",
     "image": "assets/images/Strategic-Management.jpg",
     "skills": ["Strategic Leadership", "Competitive Analysis", "Case Studies", "Business Transformation", "Global Marketing", "Strategic Decision-Making", "Business Strategy", "Market Dynamics", "Strategic Thinking", "Strategic Planning", "Business Strategies", "Technology Strategies"],
@@ -24,7 +23,6 @@
     "date": "2025-12-28",
     "hours": 6,
     "verified": true,
-    "photo": "assets/images/user-photo.png",
     "institutionLogo": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/bc/b58dfe61164dfbbea884fddab39456/5.png?auto=format%2Ccompress&dpr=1&w=80&h=80",
     "image": "assets/images/Procurement.jpg",
     "skills": ["Governance", "Public Policies", "Business Ethics", "Request for Proposal", "Corporate Sustainability", "Purchasing", "Stakeholder Engagement", "Business Risk Management", "Procurement", "Supplier Relationship Management", "Regulatory Compliance", "Sustainable Business"],
@@ -40,7 +38,6 @@
     "date": "2025-12-26",
     "hours": 12,
     "verified": true,
-    "photo": "assets/images/user-photo.png",
     "institutionLogo": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/2f/8bf130459a11e78f3f93ee93db5719/cu_collegiate_blue.png?auto=format%2Ccompress&dpr=1&w=80&h=80",
     "image": "assets/images/Poverty.jpg",
     "skills": ["Public Policies", "Social Justice", "Social Sciences", "Socioeconomics", "Labor Relations", "Policy Analysis", "Economic Development", "Political Sciences", "Economics", "Demography", "Policy Development", "Social and Human Services"],
@@ -56,7 +53,6 @@
     "date": "2025-12-24",
     "hours": 12,
     "verified": true,
-    "photo": "assets/images/user-photo.png",
     "institutionLogo": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/99/be375da761419aa65929074c4fe213/logo-Universiteit-leiden-resized.png?auto=format%2Ccompress&dpr=1&w=80&h=80",
     "image": "assets/images/Population-Health.jpg",
     "skills": ["Health Equity", "Public Health and Disease Prevention", "Preventative Care", "Governance", "Health Systems", "Continuous Quality Improvement (CQI)", "Health Care Administration", "Health Disparities", "Community Health", "Health Care", "Social Determinants Of Health", "Social Network Analysis"],
@@ -72,7 +68,6 @@
     "date": "2025-12-27",
     "hours": 112,
     "verified": true,
-    "photo": "assets/images/user-photo.png",
     "institutionLogo": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/3d/1c8fdf7ef5404aa83ab0c00fa12cf5/LOGO_1.png?auto=format%2Ccompress&dpr=1&w=80&h=80",
     "image": "assets/images/Leadership-Organization.jpg",
     "skills": ["Organization Change", "Business Ethics", "Diversity and Inclusion", "Influencing", "Team Leadership", "Leadership and Management", "Organization Structure", "People Management", "Team Management", "Negotiation", "Decision Making", "Conflict Management"],
@@ -88,7 +83,6 @@
     "date": "2025-12-26",
     "hours": 18,
     "verified": true,
-    "photo": "assets/images/user-photo.png",
     "institutionLogo": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/13/4f6741eec44e2b9e40fc79bdf15b87/360x360.png?auto=format%2Ccompress&dpr=1&w=80&h=80",
     "image": "assets/images/LGPP.jpg",
     "skills": ["Public Policies", "International Relations", "Social Justice", "Public Administration", "Policy Analysis", "Policy Development", "Political Sciences", "Governance", "Law", "Regulation, and Compliance", "Economic Development", "Case Studies"],
@@ -104,7 +98,6 @@
     "date": "2025-12-24",
     "hours": 21,
     "verified": true,
-    "photo": "assets/images/user-photo.png",
     "institutionLogo": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-university-assets.s3.amazonaws.com/f7/06e620f1a111e38144319a9c8ed320/cu-stand-alone_1_.png?auto=format%2Ccompress&dpr=1&w=80&h=80",
     "image": "assets/images/Inclusive.jpg",
     "skills": ["Active Listening", "Leadership", "Diversity Awareness", "Culture", "Diversity and Inclusion", "Self Awareness", "Emotional Intelligence", "Cultural Diversity", "Empathy & Emotional Intelligence", "Interpersonal Communication", "Workplace Inclusivity", "Constructive Feedback"],
@@ -120,7 +113,6 @@
     "date": "2025-12-24",
     "hours": 10,
     "verified": true,
-    "photo": "assets/images/user-photo.png",
     "institutionLogo": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-university-assets.s3.amazonaws.com/16/60429009c611e5933c2d82813d6d0a/SCIENCES-PO_blason_RGB_360x360.png?auto=format%2Ccompress&dpr=1&w=80&h=80",
     "image": "assets/images/Data-Urban.jpg",
     "skills": ["Algorithms", "Information Privacy", "Political Sciences", "Digital Transformation", "Social Sciences", "Public Administration", "Data Governance", "Governance", "Big Data", "Computing Platforms", "Data Ethics", "Data Literacy"],
@@ -128,3 +120,4 @@
     "enrolled": "4.353 sudah terdaftar"
   }
 ]
+
