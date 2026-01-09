@@ -8,49 +8,54 @@ async function fetchCertificates() {
     }
 }
 
-function updateEl(id, value, attr = 'text') {
+// Fungsi pembantu agar tidak error jika ID di HTML tidak ditemukan
+function safeSet(id, value, type = 'text') {
     const el = document.getElementById(id);
-    if (!el) return; // Lewati jika ID tidak ditemukan di HTML
-    
-    if (attr === 'src') el.src = value;
-    else if (attr === 'href') el.href = value;
+    if (!el) return;
+    if (type === 'src') el.src = value;
+    else if (type === 'href') el.href = value;
     else el.textContent = value;
 }
 
 async function displayCertificate() {
     const certificates = await fetchCertificates();
     const urlParams = new URLSearchParams(window.location.search);
-    const certId = urlParams.get('id');
+    
+    // Mengambil ID dari URL (Contoh: ?id=ABCDE)
+    let certId = urlParams.get('id');
 
-    // Cari data berdasarkan ID, jika tidak ada ambil data pertama (indeks 0)
+    // MENCARI DATA: Cari yang ID-nya cocok (Case Insensitive)
+    // Jika ID di URL kosong atau tidak ditemukan, ambil data pertama [0]
     const data = certId 
         ? certificates.find(c => c.id.toUpperCase() === certId.toUpperCase()) 
         : certificates[0];
 
     if (data) {
-        // Isi Teks
-        updateEl('course-title', data.course);
-        updateEl('user-name', data.name);
-        updateEl('user-name-small', data.name);
-        updateEl('cert-date', data.date);
-        updateEl('duration', data.hours + ' jam (kira-kira)');
-        updateEl('uni-name', data.institution);
-        updateEl('rating', data.rating);
-        updateEl('enrolled', data.enrolled);
+        // 1. Mengisi Nama & Kursus
+        safeSet('user-name', data.name);
+        safeSet('user-name-small', data.name);
+        safeSet('course-title', data.course);
+        safeSet('cert-date', data.date);
+        safeSet('duration', data.hours + ' jam (kira-kira)');
 
-        // Isi Gambar
-        updateEl('user-photo', data.photo, 'src');
-        updateEl('cert-image', data.image, 'src');
-        updateEl('uni-logo', data.institutionLogo, 'src');
+        // 2. Mengisi Data Institusi & Rating
+        safeSet('uni-name', data.institution);
+        safeSet('rating', data.rating);
+        safeSet('enrolled', data.enrolled);
+        safeSet('uni-logo', data.institutionLogo, 'src');
 
-        // Tombol Download
-        updateEl('btn-download', data.pdf_url, 'href');
+        // 3. Mengisi Gambar Sertifikat & Preview
+        safeSet('cert-image', data.image, 'src');
+        safeSet('user-photo', data.photo, 'src');
 
-        // Render Skills (Daftar Keahlian)
-        const skillBox = document.getElementById('skills-container');
-        if (skillBox && data.skills) {
-            skillBox.innerHTML = data.skills.map(s => 
-                `<span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium border border-gray-200">${s}</span>`
+        // 4. Mengisi Tombol Download
+        safeSet('btn-download', data.pdf_url, 'href');
+
+        // 5. Render Skills (Daftar Keahlian)
+        const skillsContainer = document.getElementById('skills-container');
+        if (skillsContainer && data.skills) {
+            skillsContainer.innerHTML = data.skills.map(skill => 
+                `<span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium border border-gray-200">${skill}</span>`
             ).join('');
         }
     }
